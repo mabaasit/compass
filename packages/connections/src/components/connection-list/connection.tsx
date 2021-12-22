@@ -125,11 +125,15 @@ function Connection({
   connectionInfo,
   onClick,
   onDoubleClick,
+  duplicateConnection,
+  removeConnection
 }: {
   isActive: boolean;
   connectionInfo: ConnectionInfo;
   onClick: () => void;
   onDoubleClick: (connectionInfo: ConnectionInfo) => void;
+  duplicateConnection: (connectionInfo: ConnectionInfo) => void;
+  removeConnection: (connectionInfo: ConnectionInfo) => void;
 }): React.ReactElement {
   const connectionTitle = getConnectionTitle(connectionInfo);
   const {
@@ -188,7 +192,10 @@ function Connection({
               ? uiColors.gray.dark3
               : uiColors.white
           }
-          connectionString={connectionString}
+          connectionString={connectionInfo.connectionOptions.connectionString}
+          connectionInfo={connectionInfo}
+          duplicateConnection={duplicateConnection}
+          removeConnection={removeConnection}
         />
       </div>
     </div>

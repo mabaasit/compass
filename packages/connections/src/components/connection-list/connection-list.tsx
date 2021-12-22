@@ -138,12 +138,16 @@ function ConnectionList({
   createNewConnection,
   setActiveConnectionId,
   onDoubleClick,
+  duplicateConnection,
+  removeConnection
 }: {
   activeConnectionId?: string;
   connections: ConnectionInfo[];
   createNewConnection: () => void;
   setActiveConnectionId: (connectionId?: string) => void;
   onDoubleClick: (connectionInfo: ConnectionInfo) => void;
+  duplicateConnection: (connectionInfo: ConnectionInfo) => void;
+  removeConnection: (connectionInfo: ConnectionInfo) => void;
 }): React.ReactElement {
   const favoriteConnections = connections
     .filter(
@@ -202,6 +206,8 @@ function ConnectionList({
                 connectionInfo={connectionInfo}
                 onClick={() => setActiveConnectionId(connectionInfo.id)}
                 onDoubleClick={onDoubleClick}
+                removeConnection={removeConnection}
+                duplicateConnection={duplicateConnection}
               />
             </li>
           ))}
@@ -224,6 +230,8 @@ function ConnectionList({
                 connectionInfo={connectionInfo}
                 onClick={() => setActiveConnectionId(connectionInfo.id)}
                 onDoubleClick={onDoubleClick}
+                removeConnection={removeConnection}
+                duplicateConnection={duplicateConnection}
               />
             </li>
           ))}
