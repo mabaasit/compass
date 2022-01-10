@@ -126,7 +126,7 @@ function Connection({
   onClick,
   onDoubleClick,
   duplicateConnection,
-  removeConnection
+  removeConnection,
 }: {
   isActive: boolean;
   connectionInfo: ConnectionInfo;

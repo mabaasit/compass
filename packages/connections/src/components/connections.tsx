@@ -83,7 +83,7 @@ function Connections({
       hideStoreConnectionError,
       setActiveConnectionById,
       removeConnection,
-      duplicateConnection
+      duplicateConnection,
     },
   ] = useConnections(onConnected, connectionStorage, connectFn);
 
