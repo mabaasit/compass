@@ -8,6 +8,11 @@ updates:
       interval: "daily"
     allow:
       - dependency-name: "mongodb"
+      - dependency-name: "electron"
+      - dependency-name: "@electron/remote"
+      - dependency-name: "@electron/build"
+      - dependency-name: "browserslist"
+      - dependency-name: "node-abi"
     commit-message:
       prefix: "chore(deps): "
       include: "scope"
