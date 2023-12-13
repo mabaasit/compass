@@ -2,7 +2,6 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 version: 2
 updates:
-  # Electron update  
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
@@ -18,6 +17,11 @@ updates:
         - "@electron/build"
         - "browserslist"
         - "node-abi"
+      mongosh-update:
+        patterns:
+        - "@mongosh/node-runtime-worker-thread"
+        - "@mongosh/browser-repl"
+        - "@mongosh/logging"
     commit-message:
       prefix: "chore"
       include: "scope"
