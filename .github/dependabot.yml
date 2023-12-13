@@ -2,19 +2,35 @@
 # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
 version: 2
 updates:
+  # Electron update  
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    groups:
+      electron-update:
+        patterns:
+        - "electron"
+        - "@electron/remote"
+        - "@electron/build"
+        - "browserslist"
+        - "node-abi"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "release notes"
+  # Update driver, bson etc
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "daily"
     allow:
       - dependency-name: "mongodb"
-      - dependency-name: "electron"
-      - dependency-name: "@electron/remote"
-      - dependency-name: "@electron/build"
-      - dependency-name: "browserslist"
-      - dependency-name: "node-abi"
+      - dependency-name: "bson"
     commit-message:
-      prefix: "chore(deps): "
+      prefix: "chore"
       include: "scope"
     labels:
       - "dependencies"
