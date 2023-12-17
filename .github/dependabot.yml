@@ -19,9 +19,7 @@ updates:
         - "node-abi"
       mongosh-update:
         patterns:
-        - "@mongosh/node-runtime-worker-thread"
-        - "@mongosh/browser-repl"
-        - "@mongosh/logging"
+        - "@mongosh/*"
     commit-message:
       prefix: "chore"
       include: "scope"
