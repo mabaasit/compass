@@ -176,8 +176,8 @@
     "system-ca": "^1.0.2"
   },
   "devDependencies": {
-    "@electron/rebuild": "^3.4.1",
-    "@electron/remote": "^2.1.0",
+    "@electron/rebuild": "3.4.0",
+    "@electron/remote": "2.0.12",
     "@mongodb-js/atlas-service": "^0.12.2",
     "@mongodb-js/compass-aggregations": "^9.23.4",
     "@mongodb-js/compass-app-stores": "^7.7.5",
@@ -221,7 +221,7 @@
     "compass-preferences-model": "^2.16.1",
     "debug": "^4.2.0",
     "depcheck": "^1.4.1",
-    "electron": "^25.9.8",
+    "electron": "^25.9.7",
     "electron-devtools-installer": "^3.2.0",
     "electron-dl": "^3.5.0",
     "electron-mocha": "^10.1.0",
