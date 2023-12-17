@@ -19,7 +19,7 @@ updates:
         - "node-abi"
       mongosh-update:
         patterns:
-        - "@mongosh*"
+        - "mongosh*"
     commit-message:
       prefix: "chore"
       include: "scope"
