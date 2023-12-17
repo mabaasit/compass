@@ -14,7 +14,7 @@ updates:
         patterns:
         - "electron"
         - "@electron/remote"
-        - "@electron/build"
+        - "@electron/rebuild"
         - "browserslist"
         - "node-abi"
       mongosh-update:
