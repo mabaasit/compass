@@ -9,6 +9,9 @@ updates:
     allow:
       - dependency-name: "mongodb"
       - dependency-name: "bson"
+      - dependency-name: "@mongosh/node-runtime-worker-thread"
+      - dependency-name: "@mongosh/browser-repl"
+      - dependency-name: "@mongosh/logging"
     groups:
       electron-update:
         patterns:
@@ -19,7 +22,7 @@ updates:
         - "node-abi"
       mongosh-update:
         patterns:
-        - "mongosh*"
+        - "@mongosh/*"
     commit-message:
       prefix: "chore"
       include: "scope"
