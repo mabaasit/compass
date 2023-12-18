@@ -9,9 +9,9 @@ updates:
     allow:
       # Standalone deps
       - dependency-name: "mongodb"
-        update-types: ["minor", "patch"]
+        # update-types: ["minor", "patch"]
       - dependency-name: "bson"
-        update-types: ["minor", "patch"]
+        # update-types: ["minor", "patch"]
       # All the mongosh deps
       - dependency-name: "@mongosh/node-runtime-worker-thread"
       - dependency-name: "@mongosh/browser-repl"
