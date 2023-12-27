@@ -52,9 +52,9 @@ updates:
         - "@mongodb-js/sbom-tools"
       mongosh:
         patterns:
-        - dependency-name: "@mongosh/node-runtime-worker-thread"
-        - dependency-name: "@mongosh/browser-repl"
-        - dependency-name: "@mongosh/logging"
+        - "@mongosh/node-runtime-worker-thread"
+        - "@mongosh/browser-repl"
+        - "@mongosh/logging"
     commit-message:
       prefix: "chore"
       include: "scope"
