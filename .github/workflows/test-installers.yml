@@ -14,11 +14,9 @@ on:
       bucket_name:
         type: string
         description: 'S3 bucket to download installers from'
-        required: true
       bucket_key_prefix:
         type: string
         description: 'S3 bucket key prefix to download installers from'
-        required: true
       dev_version:
         type: string
         description: 'Dev version of the installer to download'
@@ -87,12 +85,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22.15.1
-          cache: 'npm'
-
       - name: Run post-checkout command
         if: matrix.post-checkout-command
         run: ${{ matrix.post-checkout-command }}
