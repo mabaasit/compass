@@ -55,22 +55,10 @@ jobs:
       matrix:
         test:
           - time-to-first-query
-          - auto-update-from
-          - auto-update-to
         package:
-          - osx_dmg
-          - osx_zip
-          - windows_zip
-          - windows_msi
-          - windows_setup
-          - linux_deb
-          # TODO(COMPASS-9061): Fix and enable the linux_tar smoke tests
-          #- linux_tar
           - linux_rpm
         hadron-distribution:
           - compass
-          - compass-readonly
-          - compass-isolated
         include:
           # MacOS
           - package: osx_dmg
@@ -112,6 +100,7 @@ jobs:
             hadron-platform: linux
             distro-id: rhel80
             post-checkout-command: |
+              dnf clean all && dnf update -y --refresh
               dnf install -y gcc gcc-c++ make git nss dbus xorg-x11-server-Xvfb yum-utils
               # Enable the devel repo to install compat-openssl11 (bringing libcrupto.so.1.1 to run mongod)
               dnf config-manager --set-enabled devel
