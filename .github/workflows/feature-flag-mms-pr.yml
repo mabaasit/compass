@@ -86,7 +86,7 @@ jobs:
             await github.rest.issues.createComment({
               owner,
               repo,
-              issue_number: prNumber,
+              issue_number: github.event.pull_request.number,
               body,
             });
 
