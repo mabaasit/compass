@@ -24,17 +24,20 @@ jobs:
       flags_count: ${{ steps.detect.outputs.flags_count }}
       new_flags: ${{ steps.detect.outputs.new_flags }}
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22.21.1
           cache: 'npm'
+
       - name: Upgrade npm
         run: npm install --global npm@11.13.0
       - name: Install ts-node and typescript
-        run: npm install --no-save --no-audit ts-node typescript
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        run: npm install --no-save --no-audit --ignore-scripts ts-node typescript 
+
       - name: Detect new feature flags
         id: detect
         run: npx ts-node scripts/detect-feature-flags.ts
@@ -94,17 +97,19 @@ jobs:
     permissions:
       contents: read
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22.21.1
           cache: 'npm'
       - name: Upgrade npm
         run: npm install --global npm@11.13.0
+
       - name: Install ts-node and typescript
-        run: npm install --no-save --no-audit ts-node typescript
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        run: npm install --no-save --no-audit --ignore-scripts ts-node typescript 
 
       - name: Create MMS PR(s)
         env:
