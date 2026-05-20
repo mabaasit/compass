@@ -36,7 +36,7 @@ jobs:
       - name: Upgrade npm
         run: npm install --global npm@11.13.0
       - name: Install ts-node and typescript
-        run: npm install --no-save --no-audit --ignore-scripts ts-node typescript 
+        run: npm install --no-save --no-audit --ignore-scripts ts-node typescript
 
       - name: Detect new feature flags
         id: detect
@@ -92,6 +92,8 @@ jobs:
   create-mms-pr:
     name: Create MMS PR for feature flag(s)
     needs: detect-and-comment
+    environment: 
+      name: create-mms-pr
     if: needs.detect-and-comment.outputs.flags_count != '' && needs.detect-and-comment.outputs.flags_count != '0'
     runs-on: ubuntu-latest
     permissions:
@@ -109,7 +111,7 @@ jobs:
         run: npm install --global npm@11.13.0
 
       - name: Install ts-node and typescript
-        run: npm install --no-save --no-audit --ignore-scripts ts-node typescript 
+        run: npm install --no-save --no-audit --ignore-scripts ts-node typescript
 
       - name: Create MMS PR(s)
         env:
